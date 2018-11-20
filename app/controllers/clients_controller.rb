@@ -14,16 +14,26 @@ class ClientsController < ApplicationController
   end
 
   def create 
-    @client = Client.new(client)
+    @client = Client.new(client_params)
+    if @client.save 
+      redirect_to @client 
+    else 
+      render :new
+    end
   end
 
   def destroy 
-
+    @client.destroy 
+    redirect_to clients_path
   end 
 
   private 
 
     def set_client 
       @client = Client.find(params[:id])
+    end
+
+    def client_params 
+      params.require(:client).permit(:first_name, :last_name)
     end
 end 
