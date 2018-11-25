@@ -1,8 +1,11 @@
 <h1>Make an Appointment </h1>
 
 <%= form_with(model: [@doctor, @appointment], local: true, class: "ui form") do |f| %>
+
   <%= f.label :client %>
   <%= f.label :role %>
-  <%= f.select :role, ['teacher', 'student'] %>
-  <%= f.submit nil, class: "fluid ui yellow button" %>
+  <%= f.select :role, ['1:30', '12:30', '2:30', '3:30', '4:30'] %>
+  
+  <%= f.submit nil, class: "fluid ui blue button" %>
+  
 <% end %>

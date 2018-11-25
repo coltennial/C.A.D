@@ -1,3 +1,20 @@
-// Place all the styles related to the clients controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+body {
+  font-size: 2rem;
+  background-color: #def;
+}
+
+li {
+  list-style-type: none;
+}
+
+.li_to {
+  width: 80%;
+  height: 50px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #212121;
+  border: 2px solid black;
+  border-radius: 10px;
+  padding: 2px 300px;
+  margin: 0 auto;
+}

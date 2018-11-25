@@ -10,9 +10,29 @@
   </head>
 
   <body>
+
     <%= render 'layouts/navbar' %>
     <div class="ui container">
+
+    <% if user_signed_in? %>
+      <li>
+      <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "ui yellow button" %>        
+      </li>
+    <% else %>
+      <li>
+      <%= link_to 'Login', new_user_session_path, class: "ui orange button"  %>  
+      </li>
+<% end %>
+
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% elsif alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+    
       <%= yield %>
     </div>
+
+    
   </body>
 </html>

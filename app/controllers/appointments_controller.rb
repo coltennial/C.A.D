@@ -1,10 +1,9 @@
 class AppointmentsController < ApplicationController
   before_action :set_doctor
+  before_action :authenticate_user!, except: [:index, :show]
 
   def index
-    @teachers = @doctor.appointments.where(role: 'teacher')
-    @tas = @doctor.appointments.where(role: 'ta')
-    @students = @doctor.appointments.where(role: 'student')
+    @time = @doctor.appointments.where(role: 'time')
   end
 
   def new

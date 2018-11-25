@@ -1,12 +1,12 @@
 <h1>Clients</h1>
 
-<%= link_to "Add Client", new_client_path %>
+<%= link_to "Add Client", new_client_path, class: "li_to" %>
 
 <ul>
   <% @clients.each do |client| %>
   
     <li>
-      <%= link_to client.c_name, client %>
+      <%= link_to client.c_name, client, class: "li_to" %>
     </li>
 
     <% end %>
