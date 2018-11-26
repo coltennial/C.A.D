@@ -1,14 +1,16 @@
 
-<h1>Doctors</h1>
+<div class="box">
+  <h1>Doctors</h1>
 
-<%= link_to "Add New Doctor", new_doctor_path, class: "li_to" %>
+  <%= link_to "Add New Doctor", new_doctor_path, class: "li_to" %>
 
-<h2><%= @doctors.length <= 0 ? "No Doctors Assigned" : "" %></h2>
+  <h2><%= @doctors.length <= 0 ? "No Doctors Assigned" : "" %></h2>
 
-<ul>
-<% @doctors.each do |doctor| %>
-  <li class="li-container">
-    <%= link_to doctor.name, doctor, class: "li_to" %>
-  </li>
-  <% end %>
-</ul>
+  <ul>
+  <% @doctors.each do |doctor| %>
+    <li class="li-container">
+      <%= link_to doctor.name, doctor, class: "li_to" %>
+    </li>
+    <% end %>
+  </ul>
+</div>
